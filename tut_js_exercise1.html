@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Exercise 1 </title>
+    </head>
+    <body>
+        <h2>Fixing Capitalization </h2>
+        <div class="output">
+            <ul>
+
+            </ul>
+        </div>
+        <script>
+            const list=document.querySelector(".output ul");
+            list.innerHTML = '';
+            let cities = ["mumBai","DELhi","JaIPuR","gOa"];
+            /*
+            for (let index in cities){
+                let city = cities[index];
+                let first = city[0];
+                let Rest = city.slice(1,city.length);
+                let Capitalized = first.toUpperCase()+Rest.toLowerCase() + " ";
+                let node = document.createElement('li');
+                node.textContent = Capitalized;
+                list.appendChild(node);
+                console.log(Capitalized);
+            }
+            */
+            for (let i=0; i<cities.length; i++){
+                let lowerCaseCity = cities[i].toLowerCase();
+                let Capitalized = lowerCaseCity.replace(lowerCaseCity[0], lowerCaseCity[0].toUpperCase());
+                let node = document.createElement('li');
+                node.textContent = Capitalized;
+                list.appendChild(node);
+            }
+        </script>
+    </body>
+
+</html>

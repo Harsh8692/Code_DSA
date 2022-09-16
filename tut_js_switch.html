@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Switch statements </title>
+    </head>
+    <body>
+        <h1>Example of fruit selling for switch statement</h1>
+
+        <script>
+            var fruittype = prompt("Enter the fruit type:");
+            switch (fruittype){
+                case "Narangi":
+                    console.log("64Rs kilo.");
+                    break;
+                case "Saeb":
+                    console.log("100Rs kilo.");
+                    break;
+                case "Kele":
+                    console.log("70Rs dozen.");
+                    break;
+                case "Amrud":
+                    console.log("80Rs kilo.");
+                    break;
+                case "Aam":
+                    console.log("100Rs kilo.");
+                    break;
+                default:
+                    console.log(`${fruittype} is not available today.`);
+            }
+            console.log("Do you want anything else?");
+        </script>
+    </body>
+</html>

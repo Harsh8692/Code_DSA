@@ -1,0 +1,89 @@
+<!Doctype HTML>
+
+<html>
+
+<head>
+    <title> Lab5 </title>
+</head>
+
+<body>
+    <form>
+        <label for="fstname"> First Name: </label> <input id="fstname" type="text" id="name1">
+        <br><br>
+        <label for="lstname"> Last Name: </label> <input id="lstname" type="text" id="name2">
+        <br><br>
+        <label for="age"> Age: </label> <input id="age" type="text" id="name3">
+        <br><br>
+
+        <label for="hmstate"> Home state: </label>
+        <select id="hmstate">
+            <option>Select your state</option>
+            <option> Goa </option>
+            <option> Maharashtra </option>
+            <option>Punjab </option>
+            <option>Tamil Nadu </option>
+            <option>Haryana</option>
+        </select>
+    </form> <br>
+    <button id="sbmt" onclick="sbtfrm();"> Submit </button>
+    <h2 id="hdr" style="display:none;">Applicant details </h2>
+    <p id="dtls" style="display:none;">
+        <b>First Name: </b> <span id="dtls1"> </span><br>
+        <b>Last Name: </b> <span id="dtls2"> </span><br>
+        <b>Age: </b> <span id="dtls3"> </span><br>
+        <b>Home state: </b> <span id="dtls4"> </span><br>
+    </p>
+    <button id="clrbtn" onclick="clrdtls();" style="display:none;"> Clear </button>
+    <script>
+        //var fstname = document.getElementById('fstname').value;
+        //var lstname = document.getElementById('lstname').value;
+        //var Age = document.getElementById('age').value;
+        
+        function sbtfrm() {
+            var fstname = document.getElementById('fstname').value;
+            var lstname = document.getElementById('lstname').value;
+            var Age = document.getElementById('age').value;
+            document.getElementById('sbmt').style.display='none';
+            validate(fstname, 'dtls1');
+            validate(lstname, 'dtls2');
+            validate2(Age);
+            document.getElementById('hdr').style.display='block';
+            document.getElementById('dtls').style.display='block';
+            document.getElementById('clrbtn').style.display='block';
+            var hmstate=document.getElementById('hmstate').value;
+            document.getElementById('dtls4').innerHTML=hmstate;
+        }
+
+        function validate(input, id) {
+            if (input.length === 0) {
+                alert('Please enter a valid input');
+            }
+            else {
+                document.getElementById(id).innerHTML=input;
+            }
+        }
+
+        function validate2(input) {
+            if ((Number(input)>0) && (Number(input)<100)) {
+                document.getElementById('dtls3').innerHTML=input;
+            }
+            else {
+                alert('Please enter a valid age');
+            }
+        }
+        
+        function clrdtls() {
+            document.getElementById('sbmt').style.display='block';
+            document.getElementById('dtls1').innerHTML='';
+            document.getElementById('dtls2').innerHTML='';
+            document.getElementById('dtls3').innerHTML='';
+            document.getElementById('dtls4').innerHTML='';
+        }
+        var a="harshydv"
+        document.write('a.substring(2,5)' +a.substring(5,7))
+        const x=8.9
+        document.write(typeof(x))
+    </script>
+</body>
+
+</html>

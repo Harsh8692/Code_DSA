@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Arrays </title>
+</head>
+
+<body>
+    <h2> Arrays </h2>
+    <script>
+        /*
+        // Declaring Arrays
+        array = [1,2,3,4,5,6,7,8,9];
+        //Using object Array
+        const num = new Array(1,2,3,4,5,6,7,8,9);
+        // some operations of arrays
+        // Push: It adds an element at the end of the array and returns the length
+        // of the resulting array 
+        console.log(num.push(10));
+        // Unshift: It adds an element at the begining of the array and returns the 
+        // length of the resulting array 
+        console.log(num.unshift(0));
+        // Pop: It deletes an element from the end of the array and returns that element
+        console.log(num.pop());
+        // Shift: It deletes an element from the begining of the array and returns that element 
+        console.log(num.shift()); 
+        */
+        
+        const names = ["Harsh", "Khushi", "Sahil", "Kalpana", "Harsh"]
+        /*
+        // indexOf
+        // names.indexOf("Harsh")
+        console.log(names.indexOf("Harsh"));
+        console.log(names.indexOf("Harsh", 1)); // array is searched from 1st index
+        // lastIndexOf
+        console.log(names.lastIndexOf("Harsh"));
+        console.log(names.lastIndexOf("Harsh", 3)); // array searched from 3rd index in reverse dirxn.
+        // includes method checks if specified element is there in the array or not and returns boolean.
+        console.log(names.includes("Harsh"));
+        // include method works only for searching primitive datatype and doesn't works 
+        // for reference datatypes.
+        // find method works for SEARCHING reference datatypes
+        */
+        const electricItems=[{
+            name : "AC",
+            price : 50000,
+        },{
+            name : "LED TV",
+            price : 20000, 
+        },{
+            name : "fridge",
+            price : 10000,
+        },{
+            name : " laptop",
+            price: 70000,
+        }
+        ]
+        /*
+        const searchValue = electricItems.find(function search(element){
+            return element.price === 10000;
+        })
+        console.log(searchValue);
+        // Using arrow function
+        console.log(electricItems.find((element) => element.name === "AC"));
+        */
+
+        // Concatenating Arrays
+        name1 = ["Harsh","Khushi","Sahil"];
+        name2 = ["Kalpana","Ayushi","Naren"];
+        //console.log(name1.concat(name2));
+        //console.log(name1.concat("Avik"));
+        
+        //Using spread operator
+        let name3 = [...name1,...name2]
+        // console.log(name3);
+        // slice
+        // console.log(name3.slice(2,5));
+        
+        //for loop in arrays
+        for (let i = 0; i<names.length; i++){
+            //console.log(names[i]);
+        }
+        // for of loop in arrays
+        for (let name of names){
+            //console.log(name);
+        }
+        // for-each method available with arrays
+        names.forEach(function(name, index){
+            console.log(name,index);
+        })
+
+        // Join
+        let student = ["H","a","r","s","h"];
+        student = student.join('_');
+
+        // split
+        console.log(student.split('_'));
+
+        // filter method available with arrays
+        // filter method is similar to find but it returns all the elements in an array
+        // which satisfy the predicate condn
+        console.log(electricItems.filter(element => element.price > 20000));
+        console.log(electricItems.map(element => element.price * 2));
+        // map method returns all the values after the defined operation in a new array.
+</script>
+</body>
+
+</html>

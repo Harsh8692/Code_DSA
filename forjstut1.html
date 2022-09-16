@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Javascript tutorial </title>
+    </head>
+    <body>
+    <p>
+        This is just a sample html file as a tutorial for javascript.
+        <ul title="List of important data structures:">
+            <li>String</li>
+            <li> Number</li>
+            <li> Boolean</li>
+            <li> Object</li>
+        </ul>
+        <button type="button" onclick="icecrm()">icecrm</button>
+    </p>
+    <script lang="javascript" type="text/javascript">
+        /*For javascroipt Start right onto screen with document.write */
+        document.write("Max value of real number obtained on javascript: "+Number.MAX_VALUE+"<br/>");
+        document.write(Number.MIN_VALUE);
+
+        let iceCream = 'chocolate';
+        function icecrm(){
+            if(iceCream === 'chocolate') {
+            alert('Yay, I love chocolate ice cream!');
+            } else {
+            alert('Awwww, but chocolate is my favorite...');
+            }
+        }
+    </script>
+    </body>
+</html>

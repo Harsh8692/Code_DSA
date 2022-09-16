@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Classes </title>
+    </head>
+    <body>
+        <h2> Classes </h2>
+        <script>
+            /*
+            // Classes are a template for creating objects.
+            // Classes are infact special functions.
+            // class is a keyword
+            // Pascal case is used for naming classes.
+            // Declaring a class.
+            class Product {
+                constructor(itemName, price, discount, itemCode){
+// 'constructor' function is avaiable with class keyword
+                    this.itemName = itemName;
+                    this.price = price;
+                    this.discount = discount;
+                    this.itemCode = itemCode;
+                }
+            }
+            // now this class will behave same as our constructor function.
+
+            let pencil = new Product('Pencil', 20, 2, 'P10');
+
+            // Class Expression
+            let Product1 = class Pdt{
+                constructor(itemName, price, discount, itemCode){ 
+                this.itemName = itemName;
+                this.price = price;
+                this.discount = discount;
+                this.itemCode = itemCode;
+                }
+                // get gives us a function to access the values of a variable.
+                get getDiscountValue(){
+                    return this.discount;
+                }
+                // set gives us a keyword to set values of a variable
+                set setDiscountValue(value){
+                    this.discount = value;
+                }
+                // Method definition
+                discountValue() {
+                    return this.discount*this.price/100;
+                }
+            }
+            const chair = new Product1('chair', 499, 15, 'c10');
+            */
+
+            // Extending classes
+            class Item {
+                constructor(itemName){
+                    //console.log('Passed by Furniture: ' + itemName);
+                    this.itemName = itemName;
+                }
+                getItemName(){
+                    return this.itemName + " is a Item";
+                }
+            }
+            // child class is added to parent by extending
+            class Furniture extends Item {
+                constructor(itemName){
+                    super(itemName);
+// super function calls the constructor of the parent class (here Item) and passes its argument 
+// on to parent constructor function.
+                }
+                getItemName(){
+                    return this.itemName + " is a Furniture";
+                }
+            }
+            const chair = new Furniture('chair');
+            const pencil = new Item('Pencil');
+        </script>
+    </body>
+</html>
