@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Array Exercise
+        </title>
+    </head>
+    <body>
+        <h2> Array Exercise</h2>
+        <script>
+            const characters = [
+                {
+                    name: " Tarak Mehta",
+                    height: "172",
+                    mass: "77",
+                    eye_color: "brown",
+                    gender: "male",
+                },
+                {
+                    name: " Jethalal",
+                    height: "145",
+                    mass: "136",
+                    eye_color: "black",
+                    gender: "male",
+                },
+                {
+                    name: " Babita Ji",
+                    height: "150",
+                    mass: "49",
+                    eye_color: "grey",
+                    gender: "female",
+                },
+                {
+                    name: " Krishnan Iyer",
+                    height: "168",
+                    mass: "84",
+                    eye_color: "black",
+                    gender: "male",
+                }
+            ]
+            // Get an array of all names
+
+            let names = characters.map(character => character.name);
+            //console.log(names);
+
+            // Get an array of objects with just name and height properties
+            let nm_ht = characters.map( ch =>  {return {name: ch.name,height: ch.height,
+            }});
+            // console.log(nm_ht);
+
+            // Get the total height of all characters
+            // Method 1
+            let total = 0;
+            for ( ch of characters){
+                total = Number(ch.height) + total;
+            }
+            //console.log(total);
+            // Method 2 Using reduce method
+            let totalHeight = characters.reduce((prevHeight, character)=> {
+                return prevHeight += Number(character.height)
+            },0);
+            //console.log(totalHeight);
+
+            // Get characters  with mass greater than 100
+            let massGreterThan100 = characters.filter(character => Number(character.mass) > 100);
+            //console.log(massGreterThan100);
+
+            // Get all male characters 
+            let maleCharacters = characters.filter(character => character.gender == "male");
+            //console.log(maleCharacters);
+            // Sort by Gender
+            let genderSorted = characters.sort((ch1, ch2) => {
+                if (ch1.gender < ch2.gender){
+                    return -1;
+                }
+                if (ch1.gender > ch2.gender){
+                    return 1;
+                }
+                if (ch1.gender == ch2.gender){
+                    return 0;
+                }
+            })
+            //console.log(genderSorted);
+            // Sort by name
+            let nameSorted = characters.sort((ch1, ch2) => {
+                if (ch1.name < ch2.name){
+                    return -1;
+                }
+                if (ch1.name > ch2.name){
+                    return 1;
+                }
+                if (ch1.name == ch2.name){
+                    return 0;
+                }
+            })
+            // console.log(nameSorted);
+
+            // Does every character have mass more than 40 ?
+            //Method1
+            function checkMass40(){
+                if (characters.filter(ch => ch.mass > 40).length === characters.length) {
+                    return true;
+                }
+            }
+            //console.log(checkMass40());
+            // Method2
+            // console.log(characters.every(ch => ch.mass > 40));
+
+            // Does every character have blue eyes?
+            // every method test whether every element in the array passes the test/predicate
+            // console.log(characters.every(ch => ch.eye_color == "blue"));
+
+            // Is there at least one male character?
+            // some method test whether at least one element in the array passes the test/predicate
+            // console.log(characters.some(ch => ch.gender === "male"));
+            // Is there at least one character taller than 200?
+            // console.log(characters.some(ch => ch.height > 200));8
+        </script>
+    </body>
+</html>

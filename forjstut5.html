@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+    <head>
+        <title> Javascript DOM(Document Object Model) tutorial </title>
+        
+    </head>
+    <body>
+        <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
+        <!--On click the span the function 'editnodetext()' will be called. -->
+
+        <div id="divEx" onclick="editNodeText2('divEx', 'New text in div')">
+            <b id="rmboldtxt">Some bold text</b><br/>
+            <i> Italic text </i><br/>
+        </div>
+    
+        <script lang="javascript" type="text/javascript">
+            function editNodeText(id, newText)
+            {
+                var node=document.getElementById(id);
+                while (node.firstChild)
+                    node.removeChild(node.firstChild);
+                /*The loop would remove all of the elements from the node*/
+    
+                node.appendChild(document.createTextNode(newText));
+                node.style.color="red";
+                node.style.position="fixed";
+                node.style.top="100px";
+                node.style.left="300px";
+            }
+            function editNodeText2(id, newText)
+            {
+                /*var nod = document.getElementById(id).firstChild;
+                nod.nodeValue=newText+"<br/>";*//* This is to update the value of "nod" */
+                /*A  node need not necessarily be a tag. It can be a simple text block. */
+                var nod = document.getElementById(id);
+                /*nod.removeChild(nod.firstChildNode);*/
+                /*ele=document.getElementById("rmboldtxt");
+                ele.parentNode.removeChild(ele);*/
+                nod.removeChild(nod.childNodes[1]);
+                nod.childNodes[2].nodeValue=newText;
+                /*var newnode = document.createElement('hr');
+                nod.appendChild(newnode);*/
+                var randomtextnode = document.createTextNode('It is a random text.');
+                nod.appendChild(randomtextnode);
+    
+            }
+            </script>
+            <noscript>
+                <h3> This site requires javascript</h3>
+            </noscript>
+    </body>
+</html>

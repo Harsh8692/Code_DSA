@@ -1,0 +1,207 @@
+body {
+    background-color: powderblue;
+
+}
+
+header {
+    background-color: rgba(21, 104, 0, 0.911);
+    padding: 8px 10px
+}
+
+.span1 {
+    font-family: verdana;
+    margin: 1%;
+    color: antiquewhite;
+    margin-left: 35%;
+    font-size: large;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(116, 180, 107);
+
+}
+
+li {
+    float: left;
+    border-right: 1px solid rgb(194, 194, 194);
+}
+
+.li {
+    border-left: 1px solid rgb(194, 194, 194);
+    float: right;
+}
+
+/* :last-child selector is used to select last child of the parent tag */
+
+
+
+li span {
+    display: flex;
+    color: rgb(247, 247, 175);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+
+li span:hover:not(.functioning) {
+    background-color: #19373f;
+}
+
+.functioning {
+    background-color: #19373f;
+    display: flex;
+    color: rgb(247, 247, 175);
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.flex-use {
+    display: flex;
+
+}
+
+.flex-use>div {
+    background-color: grey;
+    margin: 4px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+
+}
+
+.main {
+    width: 97.5%;
+    background-color: #0f3742;
+    color: aliceblue;
+    margin: 4px;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-flex;
+    padding: 1%;
+}
+
+.footer {
+    display: flex;
+    background-color: rgb(2, 11, 63);
+    color: aliceblue;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    border-radius: 2px;
+}
+
+.cpyrt {
+    display: flex;
+    background-color: rgb(40, 48, 94);
+    color: black;
+    width: 99%;
+    margin: 0px;
+    border: 0px;
+    padding: 7px;
+    border-radius: 2px;
+}
+
+.hypclr {
+    width: 32%;
+    float: right;
+    text-align: center;
+    /*background-image: url(../img/waterfall.jpg);*/
+    padding: 10px;
+}
+
+.hypclr span {
+    font-size: large;
+}
+
+.hypclr a:link {
+    color: aliceblue;
+}
+
+.hypclr a:hover {
+    color: aliceblue;
+}
+
+.hypclr a:visited {
+    color: aliceblue;
+}
+
+/* Dropdown menu style */
+
+.drop {
+    display: inline-flex;
+
+}
+
+.dropitmcontent {
+    display: none;
+    position: absolute;
+    background-color: #19373f;
+
+}
+
+
+.dropitmcontent a {
+    color: rgb(247, 247, 175);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+}
+
+.drop:hover .dropitmcontent {
+    display: block;
+}
+
+.dropitmcontent a:hover {
+    background-color: #295966;
+}
+
+.drop2 span {
+    display: flex;
+    color: rgb(247, 247, 175);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.dropitmcontent2 {
+    display: none;
+    position: absolute;
+    background-color: #19373f;
+
+}
+
+
+.drop2 {
+    display: flex;
+    background-color: #19373f;
+}
+
+
+.drop2 span:hover .dropitmcontent2 {
+    display: flex;
+}
+
+.photos {
+    width: 20%;
+    /*border: 1px solid rgb(41, 36, 36);*/
+    height: 200px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.extraphotos {
+    width: 80%;
+    /*border: 1px solid rgb(41, 36, 36);*/
+    height: 350px;
+    border-radius: 10px;
+    display: inline-flex;
+}

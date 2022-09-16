@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Everything about Objects </title>
+</head>
+
+<body>
+    <h2> Everything about Objects </h2>
+    <script>
+        // Object is a reference datatype.
+        /*
+        const course = {
+            lecture: 10,  // lecture is a property of course and 10 is value of that property.
+            section: 3,
+            title : "Javascript",
+            notes: {
+                introduction: "Welcome to JS course"
+            },//notes is a nested object
+            enroll() {
+                console.log("You are successfully enrolled");
+            }//enroll is a function, but in object it is called  method (not property).
+        }
+        // To call a method inside a object
+        course.enroll();
+        // To access a property of a object
+        console.log(course.title);
+        
+        // Nature of Object is dynamic, because we can change it in the runtime.
+        course.price=999; // course is a constant object, even then, we can change it and add
+        //a property to it. 
+        console.log(course);
+        */
+
+        //Above way of defining object is not reusable.
+
+        // factory function
+        /*
+        function createCourse(title) {
+            return {
+                title: title,
+                enroll() {
+                    console.log("You are successfully enrolled");
+                }
+            }
+        }
+
+        const course = createCourse("Javascript");
+        console.log(course);
+        createCourse().enroll();
+        */
+       /*
+        // Constructor Function
+        // Constructor Function are always written in Pascal case
+        // Here this key word is used.
+        function Course(title){
+            this.title = title; // 'this' keyword refers to 'Course'. This line creates a property 
+            // named title 
+            this.enroll = function(){
+                console.log("You are successfully enrolled");
+            }
+        }
+        //const Course1= new Course('Javascript');
+        // new keyword points this keyword in an empty object and then return the object
+        //console.log(Course1)
+        //Course1.enroll();
+        //In objects we can even delete properties or methods using delete keyword.
+        //delete Course1.enroll;
+        Course1.checkEnrollment =  function(){
+            console.log("30 users are enrolled.");
+        }
+        console.log(Course1);
+        
+        // We will prove that every primitive datatype and reference datatype is an object
+        // using constructor property.
+        const course = new Course("Javascript");
+        console.log(course.constructor);
+        
+        const str = "Harsh"; //str is a string object
+        console.log(str.constructor);  // String() {[native code]}
+        */
+        // str has some predefined methods and properties, therefore, str is an object
+        //  but str is immutable object since it is predefined. So we can not declare new 
+        // properties and methods in str. While reference datatype is mutable.
+        /*
+        // Native code (internal code) in javascript engine to make a string object is given below.
+        const str = new String("Harsh"); //str is a string object
+        console.log(str.constructor);
+        console.log(typeof(str)); //Object.
+        */
+       /*
+        const Course_1 = new Function("title",` 
+        this.title = title;
+        this.enroll = function(){
+                console.log("You are successfully enrolled");}
+        `) //'Function' is constructor function of function. 'Function' is a part of javascript engine.
+           //Course_1 is a object
+        
+        const Course_2 = new Course_1("Javascript");
+        Course_2.enroll();
+        console.log(Course_2.title);
+
+        // Primitive Datatype
+        let number = 10;
+        // Pass by value
+        let number2 =  number;
+        number = 15;
+        console.log(number);
+        console.log(number2);
+        
+        // Reference Datatype
+        let obj = {number : 10};
+        // Pass by Reference i.e. Memory location of obj is passed to obj2 instead of the value.
+        let obj2 = obj;
+        obj.number = 15; 
+        console.log(obj);
+        console.log(obj2);
+        */
+        // How to Pass by value in object instead of Pass by reference
+        const cors = {
+            title : "Javascript",
+            enroll(){
+                console.log("You are successfully enrolled");
+            }
+        }
+        // Using spread operator ( ... ) we can quickly copy all or
+        // part of an existing array or object into another array or
+        // object.
+        /*
+        const cors1 = { ...cors };
+        console.log(cors);
+        console.log(cors1);
+        cors1.title = "C++";
+        console.log(cors1);
+        console.log(cors);
+        */
+        // Using Object.assign method(predefined in Javascript engine)
+        //const cors_1=Object.assign({},cors);
+        //cors_1.title="C++";
+        
+        // Using Loops
+        cors2 = {};
+        for (let key in cors){
+            cors2[key] = cors[key];
+        }
+        cors2.title ="C++";
+        cors3 = {};
+        for (let key of Object.keys(cors)){
+            cors3[key] = cors[key];
+        }
+        cors3.title="Python";
+
+    </script>
+</body>
+
+</html>

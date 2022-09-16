@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Object Exercise </title>
+    </head>
+    <body>
+        <h2> Object Exercise </h2>
+        <script>
+            const pdt = {
+                itemName: "Milk",
+                price:60 ,
+                discount:20,
+                itemCode:"Za5tF7"
+            }
+            // Using Factory Function
+            function pdt1(itemName, price, discount, itemCode){
+                return{
+                    itemName : itemName,
+                    price : price,
+                    discount : discount,
+                    itemCode : itemCode,
+                }
+            }
+            // Using constructor function
+            function Product(itemName, price, 
+            discount, itemCode){
+                this.itemName = itemName;
+                this.price = price;
+                this.discount = discount;
+                this.itemCode = itemCode;
+                this.disamt = function(){
+                    return discount * price/100;
+                }
+            }
+            const product1 = new Product("Milk", 60 ,20 ,
+            "Za5tF7")
+        </script>
+    </body>
+</html>

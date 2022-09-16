@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Drawing Board</title>
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+
+<body style="background-color: rgb(147, 223, 233);">
+    <h1>
+        Drawing Board
+    </h1>
+    <div> This webpage helps you to visualize simple geometrical shapes such as circle and rectangle.</div>
+    <h2>
+        Circle
+    </h2>
+    <div> The $area$ of a circle with radius $r$ is given by $\pi r^{2}$.
+        Similarly, the $perimeter$ of a circle with radius $r$ is given by $2\pi r$.
+        Now, let's visualize the circle using Javascript and HTML.
+    </div>
+
+    <form>
+        <label for="radius">Enter the radius $r:$</label><input id="radius">
+    </form>
+    <button onclick="vldtradi()">Validate Radius</button>
+    <button onclick="draw1()">Draw</button>
+    <button onclick="cmput()">Compute Area/Perimeter</button>
+    <div style="margin-left: 0.2%; width: 410px; height: 410px;">
+        <canvas id="paper1" width="400px" height="400px"
+         style="border: 2px solid #f10909"></canvas>
+    </div>
+
+    <h2>
+        Rectangle
+    </h2>
+    <div> The $area$ of a rectangle with width $w$ and height $h$
+        is given by $wh$. Similarly, the $perimeter$ of a rectangle
+        with with width $w$ and height $h$ is given by $2(w+h)$.
+        Now, let's visualize the rectangle using Javascript and HTML.
+    </div>
+
+    <form>
+        <label for="width">Enter the width $w:$</label><input id="width">
+        <label for="height">Enter the height $h:$</label><input id="height">
+    </form><br><br>
+    <button onclick="vldtdim()">Validate widht/height</button>
+    <button onclick="draw2()">Draw</button>
+    <button onclick="cmput()">Compute Area/Perimeter</button><br>
+    <div style="margin-left: 0.2%; width: 610px; height: 410px;">
+        <canvas id="paper2" width="600px" height="400px"
+         style="border: 2px solid #f10909"></canvas><br>
+         Papersize: $600px * 400px$. Max allowed width:600 and
+         height: 400. 
+    </div><br>
+    <hr><br><br>
+    <button onclick="clrinp()"> Clear Inputs</button>
+    <script>
+        /*var ctx1 = document.getElementById('paper1').getContext("2d");
+        ctx1.beginPath();
+        ctx1.arc(0, 0, Number(document.getElementById('radius').value), 0, 2 * Math.PI);
+        ctx1.stroke();
+        
+        var ctx2 = document.getElementById('paper2').getContext("2d");
+        ctx2.beginPath();
+        ctx2.rect(0, 0, Numner(document.getElementById('width').value), Number(document.getElementById('height').value));
+        ctx2.stroke();*/
+        function vldtradi(){
+            var radi = document.getElementById('radius').value;
+            
+            if (radi.length == 0) {
+                alert('Please enter a valid radius');
+            }
+            
+            else if (Number(radi)>0) {
+                alert('Valid radius!');
+            }
+            else{
+                alert('Please enter a valid radius');
+            }
+        }
+        function draw1(){
+            var ctx1 = document.getElementById('paper1').getContext("2d");
+            ctx1.beginPath();
+            ctx1.arc(200, 200, Number(document.getElementById('radius').value), 0, 2 * Math.PI);
+            ctx1.stroke();
+        }
+        function draw2(){
+            var ctx2 = document.getElementById('paper2').getContext("2d");
+            ctx2.beginPath();
+            ctx2.rect(0, 0, Number(document.getElementById('width').value), Number(document.getElementById('height').value));
+            ctx2.stroke();
+        }
+
+    </script>
+</body>
+
+</html>

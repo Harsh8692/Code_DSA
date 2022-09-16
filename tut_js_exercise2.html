@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Exercise 2 </title>
+    </head>
+    <body>
+        <h2>Filtering greeting messages</h2>
+        <div class="output">
+            <ul>
+
+            </ul>
+        </div>
+        <script>
+            const list = document.querySelector('.output ul');
+            list.innerHTML= '';
+            let greetings = ['Happy Birthday!',
+                'Happy Holi to all of you guys',
+                'A happy Holi to all the family',
+                'Holi Mubarak ho',
+                'Get well soon',
+                'Happy Anniversary Mom Dad!'];
+
+            for (let index in greetings){
+                let greeting = greetings[index];
+                let node = document.createElement('li');
+                if(greeting.search(/Holi/i) !== -1) {
+                    node.textContent = greeting;
+                    list.appendChild(node);
+                }
+
+            }
+        </script>
+    </body>
+</html>
